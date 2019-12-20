@@ -6,5 +6,6 @@ var landing = require("../controllers/landing.js")
 router.get('/', landing.getLanding);
 router.post('/', landing.submitLead);
 router.get('/leads', landing.showLeads);
+router.get('/leads/:lead_id', landing.showLead);
 
 module.exports = router;
