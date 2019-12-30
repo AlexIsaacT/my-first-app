@@ -12,7 +12,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    name: {
+       type: DataTypes.STRING,
+       allowNull: false,
+    },
+    Contact_number: {
+         type: DataTypes.STRING,
+         allowNull:true,
+    }
   });
 
-  return Lead;
+  return Lead; 
 };

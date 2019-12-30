@@ -2,5 +2,14 @@ extends ../layout
 
 block content
  form(action="/leads/" + lead.id + "/edit", method="POST")
+    label email : 
     input(name="leadEmail", type="email", placeholder="Enter your email address", value = lead.email)
+    br
+    label name :        
+    input(name="leadName", type="text", placeholder="Enter your name", value = lead.name)
+    br
+    label Contact no. : 
+    input(name="leadContact", type="number", placeholder="Enter your contact number", 
+                                                                     value = lead.Contact_number)
+    br
     button(type="submit") Save

@@ -2,10 +2,16 @@ extends layout
 
 block content
  h1 Lead
- p 
+ p
+  label name : 
+  span #{lead.name}
+  br
+  label email : 
   span #{lead.email}
-  | 
+  br
+  label Contact no :
+  span #{lead.Contact_number}
+  br
   a(href = "/leads/" + lead.id + "/edit") Edit
-  | 
   form(action="/leads/" + lead.id + "/delete", method="POST")
     button(type="submit") Delete

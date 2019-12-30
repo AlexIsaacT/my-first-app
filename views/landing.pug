@@ -4,14 +4,19 @@ block content
   h1= title
   p Welcome to #{title}
   form(action="/", method="POST")
+    input(name="leadName", type="text", placeholder="Enter your name")
+    br
     input(name="leadEmail", type="email", placeholder="Enter your email address")
+    br
+    input(name="leadContact", type="number", placeholder="Enter Contact number(optional)")
+    br 
     button(type="submit") Submit
   if leads
     h1 Leads
     for lead in leads
       p(id = lead.id) 
        span #{lead.email}
-       | 
+       br
        a(href = "/leads/" + lead.id) Details
        | 
        button(onclick = `deleteLead('${lead.id}')`) Delete

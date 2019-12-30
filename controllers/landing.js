@@ -6,7 +6,9 @@ exports.getLanding = function(req, res, next) {
 
 exports.submitLead = function(req, res, next) {
   return models.Lead.create({
-     email: req.body.leadEmail
+     name: req.body.leadName,
+     email: req.body.leadEmail,
+     Contact_number: req.body.leadContact
   }).then(lead => {
     res.redirect('/leads');
   })
@@ -40,7 +42,9 @@ exports.showEditLead = function(req, res, next) {
 
 exports.editLead = function(req, res, next) {
   return models.Lead.update({
-    email : req.body.leadEmail 
+    email : req.body.leadEmail,
+    name : req.body.leadName,
+    Contact_number : req.body.leadContact
   },{
     where : {
          id : req.params.lead_id
