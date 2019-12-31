@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+ h1 Signup
+ form(action="/signup", method="POST")
+  label Email
+  br
+  input(placeholder="Enter your email", required=true, type="email", name="email", value="")
+  br
+  label Password
+  br
+  input(placeholder="New password", required=true, type="password", name="password", value="")
+  br
+  button(type="submit") Signup
+  br
+  | Already have an account?
+  | 
+  a(href="/login") Login
