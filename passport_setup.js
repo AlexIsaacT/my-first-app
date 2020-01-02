@@ -1,5 +1,6 @@
 let localStrategy = require('passport-local').Strategy;
 let bcrypt = require('bcrypt');
+var models = require('./models');
 
 const validPassword = function(user, password) {
      return bcrypt.compareSync(password, user.password);
@@ -9,7 +10,7 @@ module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
         done(null, user.id)
     });
-    passport.deSerializeUser(function(id, done) {
+    passport.deserializeUser(function(id, done) {
         models.User.findOne({
             where : {
                 'id' : id

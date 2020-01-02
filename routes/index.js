@@ -5,6 +5,8 @@ var user = require("../controllers/user.js");
 /* GET home page. */
 router.get('/login', user.showLogin);
 router.get('/signup', user.showSignUp);
+router.post('/signup', user.signup);
+router.post('/login', user.login);
 
 router.get('/', landing.getLanding);
 router.post('/', landing.submitLead);
