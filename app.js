@@ -4,9 +4,13 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var passport = require('passport');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+require('./passport_setup')(passport);
 
 var app = express();
 
@@ -23,6 +27,9 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.use(session({ secret : 'our new secret' }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
