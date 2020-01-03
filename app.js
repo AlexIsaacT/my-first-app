@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
 var session = require('express-session');
+var flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({ secret : 'our new secret' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
