@@ -3,5 +3,5 @@ exports.isLoggedIn = function(req, res, next) {
     if(req.user)
          next();
     else
-         next(createError(403, "Forbidden"));
+         next(createError(403, "You must have logged in"));
 };
