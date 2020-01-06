@@ -1,7 +1,8 @@
 var models = require('../models');
+let createError = require('http-errors');
 
 exports.getLanding = function(req, res, next) {
-  res.render('landing', { title: 'Express' });
+      res.render('landing', { title: 'Express' });
 }
 
 exports.submitLead = function(req, res, next) {
@@ -10,14 +11,16 @@ exports.submitLead = function(req, res, next) {
      email: req.body.leadEmail,
      Contact_number: req.body.leadContact
   }).then(lead => {
-    res.redirect('/leads');
+      res.redirect('/leads');
+  }).catch(error => {
+      res.send("Enter valid entry");
   })
 }
 
 exports.showLeads = function(req, res, next) {
     return models.Lead.findAll().then(leads => {
       res.render('landing', { title: 'Express', leads: leads });
-    })
+    })  
 }
 
 exports.showLead = function(req, res, next) {
@@ -27,7 +30,7 @@ exports.showLead = function(req, res, next) {
     }
   }).then(lead => {
        res.render('lead', { lead: lead });
-  });
+  });  
 }
 
 exports.showEditLead = function(req, res, next) {
@@ -39,7 +42,7 @@ exports.showEditLead = function(req, res, next) {
        res.render('lead/edit_lead', { lead: lead });
   });
 }
-
+ 
 exports.editLead = function(req, res, next) {
   return models.Lead.update({
     email : req.body.leadEmail,
@@ -51,7 +54,9 @@ exports.editLead = function(req, res, next) {
     }
   }).then(result => {
        res.redirect('/leads/' + req.params.lead_id);
-  });
+  }).catch(error => {
+       res.send("Enter valid entry");
+  })
 }
 
 exports.deleteLead = function(req, res, next) {

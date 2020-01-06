@@ -8,11 +8,14 @@ block content
     br
     input(name="leadEmail", type="email", placeholder="Enter your email address")
     br
-    input(name="leadContact", type="number", placeholder="Enter Contact number(optional)")
+    input(name="leadContact", type="text", placeholder="Contact number(optional)")
     br 
     button(type="submit") Submit
     br 
     a(href = "/logout") Logout
+    br
+    br
+    a(href = "/users") Get Users..
   
   if leads
     h1 Leads
