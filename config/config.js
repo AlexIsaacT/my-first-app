@@ -1,12 +1,6 @@
 module.exports = {
   "development": {
-    "username": "heroku",
-    "password": "pwd12345",
-    "database": "heroku-db",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false,
-    "port" : 5432
+    "use_env_variable": "DATABASE_URL"
   },
   "test": {
     "username": "root",
@@ -17,11 +11,6 @@ module.exports = {
     "operatorsAliases": false
   },
   "production": {
-    "username": "heroku",
-    "password": "pwd12345",
-    "database": "heroku-db",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port" : 5432
+    "use_env_variable": "DATABASE_URL"
   }
 }
