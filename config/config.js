@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
-    "username": "express-mvp-dbuser",
-    "password": "master",
-    "database": "express-mvp-db",
+    "username": "heroku",
+    "password": "pwd12345",
+    "database": "heroku-db",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false,
