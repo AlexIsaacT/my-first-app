@@ -22,7 +22,6 @@ module.exports = {
     "database": "heroku-db",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "operatorsAliases": false,
     "port" : 5432
   }
 }
