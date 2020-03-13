@@ -17,11 +17,12 @@ module.exports = {
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "heroku",
+    "password": "pwd12345",
+    "database": "heroku-db",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "port" : 5432
   }
 }
